@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TALON League</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    🦅 TALON
+  </div>
+
+  <nav>
+    <a href="#" onclick="showSection('home');return false;">خانه</a>
+    <a href="#" onclick="showSection('games');return false;">بازی ها</a>
+    <a href="#" onclick="showSection('chat');return false;">چت</a>
+    <a href="#" onclick="showSection('poll');return false;">نظرسنجی</a>
+    <a href="#" onclick="showSection('standings');return false;">جدول</a>
+    <a href="#" onclick="showSection('honors');return false;">افتخارات</a>
+    <a href="#" onclick="showSection('news');return false;">اخبار</a>
+    <a href="#" onclick="showSection('admin');return false;">پنل مدیریت</a>
+  </nav>
+
+</header>
+
+
+<main>
+
+<!-- HOME -->
+
+<section id="home" class="section active">
+
+  <div class="hero">
+
+    <div class="hero-eagle">
+      🦅
+    </div>
+
+    <div class="badge">
+      TALON LEAGUE
+    </div>
+
+    <h1>
+      تالون یک لیگ نیست!
+    </h1>
+
+    <h2>
+      یک خانواده است.
+    </h2>
+
+    <p>
+      به خانه‌ی خانواده تالون خوش آمدید
+    </p>
+
+    <button
+      class="hero-button"
+      onclick="showSection('games')">
+      مشاهده بازی ها
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- GAMES -->
+
+<section id="games" class="section">
+
+  <div class="section-title">
+    <span>⚽</span>
+    <h2>بازی ها</h2>
+  </div>
+
+  <div id="gamesList" class="cards">
+    در حال بارگذاری...
+  </div>
+
+</section>
+
+
+<!-- CHAT -->
+
+<section id="chat" class="section">
+
+  <div class="section-title">
+    <span>💬</span>
+    <h2>چت تالون</h2>
+  </div>
+
+  <div class="chat-box">
+
+    <div
+      id="chatMessages"
+      class="chat-messages">
+      در حال بارگذاری...
+    </div>
+
+    <div class="chat-input">
+
+      <input
+        id="chatUsername"
+        placeholder="نام شما">
+
+      <input
+        id="chatMessage"
+        placeholder="پیام خود را بنویسید...">
+
+      <button onclick="sendMessage()">
+        ارسال
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- POLL -->
+
+<section id="poll" class="section">
+
+  <div class="section-title">
+    <span>📊</span>
+    <h2>نظرسنجی</h2>
+  </div>
+
+  <div
+    id="pollBox"
+    class="poll-box">
+    در حال بارگذاری...
+  </div>
+
+</section>
+
+
+<!-- STANDINGS -->
+
+<section id="standings" class="section">
+
+  <div class="section-title">
+    <span>📋</span>
+    <h2>جدول لیگ</h2>
+  </div>
+
+  <div id="standingsList">
+    در حال بارگذاری...
+  </div>
+
+</section>
+
+
+<!-- HONORS -->
+
+<section id="honors" class="section">
+
+  <div class="section-title">
+    <span>🏆</span>
+    <h2>افتخارات</h2>
+  </div>
+
+  <div class="honor-info">
+
+    <h3>
+      🥃 رده بندی بهترین مربیان تالون
+    </h3>
+
+    <p>
+      رتبه‌بندی بر اساس مجموع امتیازات افتخارات
+    </p>
+
+  </div>
+
+  <input
+    id="honorSearch"
+    class="search"
+    placeholder="🔎 جستجوی نام مربی..."
+    oninput="searchHonors()">
+
+  <div id="honorsList" class="cards">
+    در حال بارگذاری...
+  </div>
+
+  <div class="rules">
+
+    <h3>
+      قوانین امتیازدهی
+    </h3>
+
+    <p>قهرمانی لیگ — ۱۰ امتیاز 🥇</p>
+    <p>نائب قهرمان — ۵ امتیاز 🥈</p>
+    <p>سومی — ۳ امتیاز 🥉</p>
+    <p>چهارمی — ۱ امتیاز 🏅</p>
+    <p>قهرمانی جام حذفی — ۶ امتیاز 🎗️</p>
+    <p>نائب قهرمانی جام حذفی — ۱ امتیاز 🎖️</p>
+    <p>قهرمانی سوپرکاپ — ۹ امتیاز 🏆</p>
+    <p>نائب قهرمان سوپرکاپ — ۲ امتیاز 🍃</p>
+    <p>سه‌گانه — ۲۰ امتیاز 💀</p>
+    <p>توپ طلای ماه — ۲۰ امتیاز 🔥</p>
+    <p>سوپر توپ طلا سال — ۵۰ امتیاز 💀</p>
+
+  </div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section id="news" class="section">
+
+  <div class="section-title">
+    <span>📰</span>
+    <h2>اخبار تالون</h2>
+  </div>
+
+  <div id="newsList" class="cards">
+    در حال بارگذاری...
+  </div>
+
+</section>
+
+
+<!-- ADMIN -->
+
+<section id="admin" class="section">
+
+  <div
+    id="loginBox"
+    class="login-box">
+
+    <div class="lock">
+      🔐
+    </div>
+
+    <h2>
+      پنل مدیریت TALON
+    </h2>
+
+    <input
+      id="username"
+      placeholder="نام کاربری">
+
+    <input
+      id="password"
+      type="password"
+      placeholder="رمز ورود">
+
+    <button onclick="login()">
+      ورود به پنل
+    </button>
+
+  </div>
+
+
+  <div
+    id="adminPanel"
+    style="display:none;">
+
+    <div class="admin-top">
+
+      <div>
+        <span class="admin-badge">
+          ADMIN
+        </span>
+
+        <h2>
+          ⚙️ مدیریت تالون
+        </h2>
+      </div>
+
+      <button onclick="logout()">
+        خروج
+      </button>
+
+    </div>
+
+
+    <!-- NEWS ADMIN -->
+
+    <div class="admin-section">
+
+      <h3>📰 مدیریت اخبار</h3>
+
+      <button onclick="addNews()">
+        ➕ افزودن خبر
+      </button>
+
+      <div id="adminNewsList"></div>
+
+    </div>
+
+
+    <!-- GAMES ADMIN -->
+
+    <div class="admin-section">
+
+      <h3>⚽ مدیریت بازی ها</h3>
+
+      <button onclick="addGame()">
+        ➕ افزودن بازی
+      </button>
+
+      <div id="adminGamesList"></div>
+
+    </div>
+
+
+    <!-- STANDINGS ADMIN -->
+
+    <div class="admin-section">
+
+      <h3>📋 مدیریت جدول</h3>
+
+      <button onclick="addStanding()">
+        ➕ افزودن تیم
+      </button>
+
+      <div id="adminStandingsList"></div>
+
+    </div>
+
+
+    <!-- HONORS ADMIN -->
+
+    <div class="admin-section">
+
+      <h3>🏆 مدیریت افتخارات</h3>
+
+      <button onclick="addHonor()">
+        ➕ افزودن مربی
+      </button>
+
+      <div id="adminHonorsList"></div>
+
+    </div>
+
+
+    <!-- POLL ADMIN -->
+
+    <div class="admin-section">
+
+      <h3>📊 مدیریت نظرسنجی</h3>
+
+      <button onclick="addPoll()">
+        ➕ ساخت نظرسنجی
+      </button>
+
+      <div id="adminPoll"></div>
+
+    </div>
+
+
+    <!-- CHAT ADMIN -->
+
+    <div class="admin-section">
+
+      <h3>💬 مدیریت چت</h3>
+
+      <div id="adminChatList"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- DELETE MODAL -->
+
+<div
+  id="deleteModal"
+  class="modal">
+
+  <div class="modal-content">
+
+    <h2>
+      🗑️ حذف اطلاعات
+    </h2>
+
+    <p>
+      آیا مطمئن هستید که می‌خواهید این مورد را حذف کنید؟
+    </p>
+
+    <div>
+
+      <button onclick="confirmDelete()">
+        بله
+      </button>
+
+      <button onclick="closeDeleteModal()">
+        خیر
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  🦅 ᎢᎪᏞᎾᏁ | @League_Talon 🦅
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+
+      </html>
